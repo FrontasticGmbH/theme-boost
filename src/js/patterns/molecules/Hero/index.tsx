@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import MediaImage from '@frontastic/catwalk/src/js/mediaImage'
 
 import FullPageWidthWrapper from '../Layout/FullPageWidthWrapper'
@@ -32,6 +33,13 @@ const Hero = ({ image, aspect, isFullWidth }) => {
     }
 
     return content
+}
+
+
+Hero.propTypes = {
+    image: PropTypes.object.isRequired,
+    aspect: PropTypes.string.isRequired,
+    isFullWidth: PropTypes.bool.isRequired,
 }
 
 export default Hero
