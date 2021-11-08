@@ -4,7 +4,7 @@ import MediaImage from '@frontastic/catwalk/src/js/mediaImage'
 
 import FullPageWidthWrapper from '../Layout/FullPageWidthWrapper'
 
-const Hero = ({ image, aspect, isFullWidth }) => {
+const Hero = ({ image, aspect, isFullBleed }) => {
     const aspectClass = {
         'original': '',
         '16/9': 'pb-16/9',
@@ -19,16 +19,16 @@ const Hero = ({ image, aspect, isFullWidth }) => {
         return {}
     }
 
-    const content = () => (
+    const content = (
         <div className={`relative ${aspectClass[aspect]}`} style={{...calculateAspectStyle(aspect, image)}}>
             <MediaImage
-                className={`w-${isFullWidth ? 'full' : 'auto'} flex-1 bg-no-repeat bg-contain bg-center mt-6`}
-                media={image}
+                className={`w-${isFullBleed ? 'full' : 'auto'} flex-1 bg-no-repeat bg-contain bg-center mt-6`}
+                media={image.media}
             />
         </div>
     )
    
-    if (isFullWidth) {
+    if (isFullBleed) {
         return <FullPageWidthWrapper>{content}</FullPageWidthWrapper>
     }
 
@@ -39,7 +39,7 @@ const Hero = ({ image, aspect, isFullWidth }) => {
 Hero.propTypes = {
     image: PropTypes.object.isRequired,
     aspect: PropTypes.string.isRequired,
-    isFullWidth: PropTypes.bool.isRequired,
+    isFullBleed: PropTypes.bool.isRequired,
 }
 
 export default Hero

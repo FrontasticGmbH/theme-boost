@@ -5,6 +5,8 @@ import Hero from '../../../patterns/molecules/Hero'
 import tastify from '@frontastic/catwalk/src/js/helper/tastify'
 
 const HeroTastic = ({ data }) => {
+    console.log('hey world')
+
     return <Hero {...data} />
 }
 
