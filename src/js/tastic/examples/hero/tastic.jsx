@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Hero from '../../../patterns/molecules/Hero'
 import tastify from '@frontastic/catwalk/src/js/helper/tastify'
