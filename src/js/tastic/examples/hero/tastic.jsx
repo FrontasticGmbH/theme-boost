@@ -8,9 +8,7 @@ const HeroTastic = ({ data }) => {
 }
 
 HeroTastic.propTypes = {
-    image: PropTypes.object.isRequired,
-    aspect: PropTypes.string.isRequired,
-    isFullWidth: PropTypes.bool.isRequired,
+    data: PropTypes.object.isRequired,    
 }
 
 export default tastify({ translate: true })(HeroTastic)
