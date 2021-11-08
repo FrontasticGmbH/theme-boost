@@ -24,6 +24,7 @@ import MarkdownPanel from './product/product-details/markdown-panel/tastic'
 import VariantSelector from './product/product-details/variant-selector/tastic'
 import AddToCartButton from './product/product-details/add-to-cart-button/tastic'
 import IconList from './content/icon-list/tastic'
+import ExamplesHero from './examples/hero/tastic'
 
 /* eslint-disable arrow-body-style */
 const CartTastic = asyncComponent({ import: () => import('./cart/tastic'), height: {} })
@@ -75,5 +76,6 @@ export default (() => {
         'frontastic/boost/product-details/add-to-cart-button': AddToCartButton,
         'frontastic/boost/product-details/markdown-panel': MarkdownPanel,
         'frontastic/boost/product-details/description-panel': DescriptionPanel,
+        'frontastic/examples/hero': ExamplesHero,
     }
 })()
