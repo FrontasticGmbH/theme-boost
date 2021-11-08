@@ -8,7 +8,7 @@ const HeroTastic = ({ data }) => {
 }
 
 HeroTastic.propTypes = {
-    data: PropTypes.object.isRequired,    
+    data: PropTypes.object.isRequired,
 }
 
 export default tastify({ translate: true })(HeroTastic)
