@@ -23,7 +23,7 @@ const Hero = ({ image, aspect, isFullBleed }) => {
         <div className={`relative ${aspectClass[aspect]}`} style={{...calculateAspectStyle(aspect, image)}}>
             <MediaImage
                 className={`w-${isFullBleed ? 'full' : 'auto'} flex-1 bg-no-repeat bg-contain bg-center mt-6`}
-                media={image.media}
+                media={image}
             />
         </div>
     )
