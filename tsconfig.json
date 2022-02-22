@@ -10,8 +10,8 @@
         "baseUrl": ".",
         "paths": {
             "ComponentInjector": [
-                "@frontastic/catwalk/src/js/app/injector",
-                "../catwalk/src/js/app/injector"
+                "@frontastic/catwalk/src/js/app/injector.js/*",
+                "../catwalk/src/js/app/injector.js/*"
             ]
         }
     },
