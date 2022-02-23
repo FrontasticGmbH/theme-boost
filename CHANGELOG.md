@@ -1,5 +1,20 @@
 # boost Changelog
 
+## `1.3.11` (2022-02-23)
+
+* chore: retry release after release tag 1.3.10 failed
+* Fixed paths for ComponentInjector
+* fixed hero image absolute position
+* added missing media tag
+* fixed example hero image
+* added proptypes to tastic
+* removed empty strings
+* js validation fix
+* js errors fix
+* fixed js errors
+* added empty spaces at the end of files
+* example hero test
+
 ## `1.3.10` (2022-02-23)
 
 
