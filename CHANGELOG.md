@@ -1,6 +1,6 @@
 We update this list as soon as any updates are released.
 
-## Version1.3.11 (2022-02-23)
+## Version 1.3.11 (2022-02-23)
 
 * chore: retry release after release tag 1.3.10 failed
 * Fixed paths for ComponentInjector
@@ -15,7 +15,7 @@ We update this list as soon as any updates are released.
 * added empty spaces at the end of files
 * example hero test
 
-## Version1.3.10 (2022-02-23)
+## Version 1.3.10 (2022-02-23)
 
 * Fixed paths for ComponentInjector
 * fixed hero image absolute position
@@ -29,7 +29,7 @@ We update this list as soon as any updates are released.
 * added empty spaces at the end of files
 * example hero test
 
-## Version1.3.10 (2022-02-23)
+## Version 1.3.10 (2022-02-23)
 
 * Fixed paths for ComponentInjector
 * fixed hero image absolute position
@@ -43,11 +43,11 @@ We update this list as soon as any updates are released.
 * added empty spaces at the end of files
 * example hero test
 
-## Version1.3.9 (2021-08-25)
+## Version 1.3.9 (2021-08-25)
 
 * fix: added paths for typescript components overridden by Componentinjector for webpack alias
 
-## Version1.3.8 (2021-08-06)
+## Version 1.3.8 (2021-08-06)
 
 * fixed tailwind icons
 * removed traillin spaces in checkout tastic
@@ -58,38 +58,38 @@ We update this list as soon as any updates are released.
 * checkout, renamed variable form stateOrProvince to state
 * introduced states and provinces
 
-## Version1.3.7 (2021-05-11)
+## Version 1.3.7 (2021-05-11)
 
 * fixed checkout user logged in bug
 * fixed changelog
 
-## Version1.3.6 (2021-05-07)
+## Version 1.3.6 (2021-05-07)
 
 * feat(frontastic-components): correction to sentence case
 * Merge branch 'master' into klaudija/term
 
-## Version1.3.5 (2021-05-03)
+## Version 1.3.5 (2021-05-03)
 
 
 * fixed top menu bug
 * fixed product description
 
-## Version1.3.4 (2021-04-30)
+## Version 1.3.4 (2021-04-30)
 
 * fixed top menu navigation
 * facets have translations, markdown panel applied with classes, top menu items are translatable
 
-## Version1.3.3 (2021-04-29)
+## Version 1.3.3 (2021-04-29)
 
 * theme-boost changelog fix
 
-## Version1.3.2 (2021-04-29)
+## Version 1.3.2 (2021-04-29)
 
 * fix: update user context after address, user details, password changes
 * added contacts and fixed menu
 * footer list fix
 
-## Version1.3.1 (2021-04-22)
+## Version 1.3.1 (2021-04-22)
 
 * product slider added currency
 * account typo fix
@@ -99,13 +99,13 @@ We update this list as soon as any updates are released.
 * code refactoring
 * renames injections to injection
 
-## Version1.3.0 (2021-04-08)
+## Version 1.3.0 (2021-04-08)
 
 * fix: Removed aliases in Webpack and TypeScript configuration which caused various build issues
 * fix: Remove test text in tastic
 * chore(fcli): Add custom stream handler for cli testing
 
-## Version1.2.6 (2021-03-24)
+## Version 1.2.6 (2021-03-24)
 
 * Notifications fixed
 * Fixes the types in boost theme ForegroundImage
@@ -117,7 +117,7 @@ We update this list as soon as any updates are released.
 * Adyen checkout bugfixes
 * Checkout moved pay button to right column in last checkout step
 
-## Version1.2.5 (2021-03-01)
+## Version 1.2.5 (2021-03-01)
 
 * Ddded error message in checkuot if products are out of stock
 * Product listing on load next page fix
@@ -127,19 +127,19 @@ We update this list as soon as any updates are released.
 * Upgraded adyen js/css files
 * Paypal render additional settings fix
 
-## Version1.2.4 (2021-02-25)
+## Version 1.2.4 (2021-02-25)
 
 * Refused payments show error message
 
-## Version1.2.2 (2021-02-25)
+## Version 1.2.2 (2021-02-25)
 
 * Added checkout translations
 
-## Version1.2.1 (2021-02-24)
+## Version 1.2.1 (2021-02-24)
 
 * Adyen creditcart 3d fingerprint authentication fix
 
-## Version1.2.0 (2021-02-23)
+## Version 1.2.0 (2021-02-23)
 
 * Adyen integration, discounts, taxes
 * Added language selector and fixed checkout issues
@@ -147,51 +147,51 @@ We update this list as soon as any updates are released.
 * Checkout counties are imported from commercetools
 * chore: Rename valid JSX code back to .jsx
 
-## Version1.1.5 (2021-02-18)
+## Version 1.1.5 (2021-02-18)
 
 * fix: Handle click on top category without subtree in mobile nav, too
 
-## Version1.1.4 (2021-02-18)
+## Version 1.1.4 (2021-02-18)
 
 * fix: If there is no tree consider top category a link
 
-## Version1.1.3 (2021-02-18)
+## Version 1.1.3 (2021-02-18)
 
 * fix: Also size & optionally label in order view
 
-## Version1.1.2 (2021-02-18)
+## Version 1.1.2 (2021-02-18)
 
 * fix: Try to also optionally handle size as enum
 
-## Version1.1.1 (2021-02-08)
+## Version 1.1.1 (2021-02-08)
 
 * fix: Paths to used icons was wrong
 * Eslint fixes
 
-## Version1.1.0 (2021-02-04)
+## Version 1.1.0 (2021-02-04)
 
 * feat: Adds PDP text panels
 
-## Version1.0.3 (2021-01-29)
+## Version 1.0.3 (2021-01-29)
 
 * feat: adds simple-tile tastic
 
-## Version1.0.2 (2021-01-28)
+## Version 1.0.2 (2021-01-28)
 
 * removed shortid from checkbox component
 
-## Version1.0.1 (2021-01-27)
+## Version 1.0.1 (2021-01-27)
 
 * removed mobile header menu about us information
 
-## Version1.0.0 (2021-01-20)
+## Version 1.0.0 (2021-01-20)
 
 * feat: Adds original aspect ratio to the tile
 * fix: Tastic crashed w/o translate:true
 * Removed header padding from content in mobile
 * fix: Upgraded @types/react consistently to 17.0.0
 
-## Version1.0.0-rc.10 (2020-12-09)
+## Version 1.0.0-rc.10 (2020-12-09)
 
 * fix: Changed file extensions so the SVGR webpack plugin hits in
 * fix: turns starRating into tsx component
@@ -217,7 +217,7 @@ We update this list as soon as any updates are released.
 * added relative width and fixed screen width responsive classes
 * added white background to checkout panels
 
-## Version1.0.0-rc.9 (2020-10-27)
+## Version 1.0.0-rc.9 (2020-10-27)
 
 * Product category, slider grid layout fix
 * Fixed base font
@@ -227,14 +227,14 @@ We update this list as soon as any updates are released.
 * Fix: bugfixes, types and cleanups for tile2
 * Fixes tile to not getting tw styles to get purged
 
-## Version1.0.0-rc.8 (2020-10-12)
+## Version 1.0.0-rc.8 (2020-10-12)
 
 * Badge pasitioning fix
 * Adds fullwidth render, fixes fully clickable tile
 * Horizontal spacer fix
 * Updates the tile with more features
 
-## Version1.0.0-rc.7 (2020-10-01)
+## Version 1.0.0-rc.7 (2020-10-01)
 
 * Fixed js errors in various components
 * fix: Removes header and adjust pagination color
@@ -248,7 +248,7 @@ We update this list as soon as any updates are released.
 * A11y: Added aria-label to all buttons without a clear label
 * A11y: CS & start providing translated labels to buttons
 
-## Version1.0.0-rc.7 (2020-09-15)
+## Version 1.0.0-rc.7 (2020-09-15)
 
 **@TODO:** Please adapt these raw commit messages since last release into CHANGELOG entries – they will be added to the package changelog.
 
@@ -633,7 +633,7 @@ We update this list as soon as any updates are released.
 * Merge remote-tracking branch 'origin/master' into cart-tastics-rework
 * initial commit
 
-## Version1.0.0-rc.6 (2020-09-11)
+## Version 1.0.0-rc.6 (2020-09-11)
 
 * Got rid of lodash in boost theme
 * Only render mobile navigation on mobile
@@ -661,11 +661,11 @@ We update this list as soon as any updates are released.
 * Removed cart from checkout panels
 * Implement design for badge, add usage to the MainMenu component
 
-## Version1.0.0-rc.5 (2020-08-11)
+## Version 1.0.0-rc.5 (2020-08-11)
 
 * fix: Do not hide SSR overlay
 
-## Version1.0.0-rc.4 (2020-08-05)
+## Version 1.0.0-rc.4 (2020-08-05)
 
 * Themable Boost theme
 * Layout Spacings
