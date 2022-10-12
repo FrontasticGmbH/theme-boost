@@ -7,7 +7,7 @@ const NotificationContainer: React.FunctionComponent = ({ children }) => {
             {children}
             <ToastContainer
                 position={toast.POSITION.BOTTOM_CENTER}
-                autoClose={30000000}
+                autoClose={3000}
                 closeButton={false}
                 hideProgressBar
                 newestOnTop={false}
