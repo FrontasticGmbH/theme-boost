@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
-import { ToastContainer, toast, Slide } from 'react-toastify'
-
-import ComponentInjector from '@frontastic/catwalk/src/js/app/injector'
+import { toast } from 'react-toastify'
 
 import AlertSuccess from '../../atoms/alert/Success'
 import AlertError from '../../atoms/alert/Error'
@@ -23,20 +21,7 @@ function Notification({ message, type }: Props) {
         })
     }, [])
 
-    return (
-        <ToastContainer
-            position={toast.POSITION.BOTTOM_CENTER}
-            autoClose={3000}
-            closeButton={false}
-            hideProgressBar
-            newestOnTop={false}
-            rtl={false}
-            transition={Slide}
-            pauseOnFocusLoss
-            pauseOnHover
-            draggable
-        />
-    )
+    return <></>
 }
 
-export default ComponentInjector.return('AtomsNotification', Notification)
+export default Notification
