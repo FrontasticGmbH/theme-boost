@@ -1,4 +1,10 @@
-We update this list as soon as any updates are released.
+
+## Version 1.3.12 (2022-10-13)
+
+** Bug fixes **
+
+- Don't render the notification container multiple times when there are multiple notifications
+
 
 ## Version 1.3.11 (2022-02-23)
 
