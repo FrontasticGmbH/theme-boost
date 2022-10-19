@@ -44,7 +44,7 @@
                     "label": "Space in px (overrides size field)",
                     "field": "spaceInPx",
                     "type": "integer",
-                    "default": ""
+                    "default": 0
                 }
             ]
         }
