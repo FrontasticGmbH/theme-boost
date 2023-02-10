@@ -1,7 +1,11 @@
 import React from 'react'
 import { Slide, toast, ToastContainer } from 'react-toastify'
 
-const NotificationContainer: React.FunctionComponent = ({ children }) => {
+interface Props {
+    children?: React.ReactNode
+}
+
+const NotificationContainer: React.FunctionComponent<Props> = ({ children }) => {
     return (
         <>
             {children}

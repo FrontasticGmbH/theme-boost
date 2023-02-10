@@ -22,7 +22,8 @@ const Cart = ({ data, isLoading = false }) => {
 }
 
 Cart.propTypes = {
-    cart: PropTypes.object,
+    isLoading: PropTypes.bool,
+    data: PropTypes.object,
 }
 
 export default Cart
