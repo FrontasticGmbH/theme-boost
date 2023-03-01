@@ -1,5 +1,3 @@
-const merge = require('webpack-merge')
-const path = require('path')
 const paths = require('@frontastic/catwalk/config/paths')
 const autoprefixer = require('autoprefixer')
 
