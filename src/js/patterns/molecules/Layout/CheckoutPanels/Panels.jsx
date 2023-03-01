@@ -33,8 +33,10 @@ const Panels = forwardRef(
                     }}
                 >
                     {steps.map(({ component: PanelComponent, name }, i) => {
+                        // eslint-disable-next-line react-hooks/rules-of-hooks
                         const panelRef = useRef()
 
+                        // eslint-disable-next-line react-hooks/rules-of-hooks
                         useObserver({
                             callback: () => {
                                 if (ts.current) {
