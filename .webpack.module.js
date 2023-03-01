@@ -21,13 +21,11 @@ module.exports = (config, PRODUCTION, SERVER) => {
                         loader.options.postcssOptions = {}
                     }
 
-                    loader.options.postcssOptions.plugins = () => {
-                        return [
-                            require('postcss-flexbugs-fixes'),
-                            require('tailwindcss')(__dirname + '/tailwind.config.js'),
-                            autoprefixer(),
-                        ]
-                    }
+                    loader.options.postcssOptions.plugins = [
+                        require('postcss-flexbugs-fixes'),
+                        require('tailwindcss')(__dirname + '/tailwind.config.js'),
+                        autoprefixer(),
+                    ]
                 }
             }
         }
