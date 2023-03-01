@@ -59,9 +59,10 @@ module.exports = async ({ config, mode }) => {
             {
                 loader: require.resolve('postcss-loader'),
                 options: {
-                    ident: 'postcss',
-                    plugins: () => {
-                        return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
+                    postcssOptions: {
+                        plugins: () => {
+                            return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
+                        },
                     },
                 },
             },
@@ -77,9 +78,10 @@ module.exports = async ({ config, mode }) => {
             {
                 loader: require.resolve('postcss-loader'),
                 options: {
-                    ident: 'postcss',
-                    plugins: () => {
-                        return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
+                    postcssOptions: {
+                        plugins: () => {
+                            return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
+                        },
                     },
                 },
             },

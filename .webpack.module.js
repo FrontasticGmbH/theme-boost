@@ -19,7 +19,11 @@ module.exports = (config, PRODUCTION, SERVER) => {
                     // @TODO: There is no way to sensibly adapt this plugin
                     // list in a callback, right? So we just overwrite it for
                     // now…
-                    loader.options.plugins = () => {
+                    if (!loader.options.postcssOptions) {
+                        loader.options.postcssOptions = {}
+                    }
+
+                    loader.options.postcssOptions.plugins = () => {
                         return [
                             require('postcss-flexbugs-fixes'),
                             require('tailwindcss')(__dirname + '/tailwind.config.js'),
