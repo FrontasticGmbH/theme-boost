@@ -1,4 +1,10 @@
 
+## Version 1.4.0 (2023-03-02)
+
+** New Features and Improvements **
+
+- Add compatibility with most recent catwalk version
+
 ## Version 1.3.12 (2022-10-13)
 
 ** Bug fixes **
