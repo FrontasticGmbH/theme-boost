@@ -60,9 +60,11 @@ module.exports = async ({ config, mode }) => {
                 loader: require.resolve('postcss-loader'),
                 options: {
                     postcssOptions: {
-                        plugins: () => {
-                            return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
-                        },
+                        plugins: [
+                            require('postcss-flexbugs-fixes'),
+                            require('tailwindcss'),
+                            autoprefixer(),
+                        ],
                     },
                 },
             },
@@ -79,9 +81,11 @@ module.exports = async ({ config, mode }) => {
                 loader: require.resolve('postcss-loader'),
                 options: {
                     postcssOptions: {
-                        plugins: () => {
-                            return [require('postcss-flexbugs-fixes'), require('tailwindcss'), autoprefixer()]
-                        },
+                        plugins: [
+                            require('postcss-flexbugs-fixes'),
+                            require('tailwindcss'),
+                            autoprefixer(),
+                        ],
                     },
                 },
             },
@@ -105,9 +109,7 @@ module.exports = async ({ config, mode }) => {
 
     config.module.rules.push({
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        issuer: {
-            test: /\.jsx?$|\.mdx?$/,
-        },
+        issuer: /\.[jt]sx?$/,
         use: [
             {
                 loader: '@svgr/webpack',
