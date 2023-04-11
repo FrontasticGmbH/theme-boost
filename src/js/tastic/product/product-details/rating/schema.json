@@ -1,0 +1,20 @@
+{
+    "tasticType": "frontastic/boost/product-details/rating",
+    "name": "Product rating",
+    "category": "Product details",
+    "icon": "star",
+    "schema": [
+        {
+            "name": "Product configuration",
+            "fields": [
+                {
+                    "label": "Data source filters",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "product",
+                    "default": null
+                }
+            ]
+        }
+    ]
+}

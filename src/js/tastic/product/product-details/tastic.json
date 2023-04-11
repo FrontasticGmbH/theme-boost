@@ -1,0 +1,20 @@
+{
+    "tasticType": "frontastic/boost/product/product-details",
+    "name": "Product details",
+    "category": "Product details",
+    "icon": "card_giftcard",
+    "schema": [
+        {
+            "name": "Main configuration",
+            "fields": [
+                {
+                    "label": "Data source filters",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "product",
+                    "default": null
+                }
+            ]
+        }
+    ]
+}

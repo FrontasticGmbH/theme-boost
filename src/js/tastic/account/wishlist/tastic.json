@@ -1,0 +1,20 @@
+{
+    "tasticType": "frontastic/boost/account/wishlists",
+    "name": "Wishlists",
+    "category": "Account",
+    "icon": "menu",
+    "schema": [
+        {
+            "name": "Data source",
+            "fields": [
+                {
+                    "label": "Data source filers",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "account-wishlists",
+                    "default": null
+                }
+            ]
+        }   
+    ]
+}

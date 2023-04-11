@@ -1,0 +1,7 @@
+{
+    "tasticType": "frontastic/boost/content/feature-service",
+    "name": "Feature service",
+    "category": "Content",
+    "icon": "menu",
+    "schema": []
+}

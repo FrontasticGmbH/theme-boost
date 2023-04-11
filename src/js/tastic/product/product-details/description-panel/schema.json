@@ -1,0 +1,26 @@
+{
+    "tasticType": "frontastic/boost/product-details/description-panel",
+    "name": "Description panel",
+    "category": "Product details",
+    "icon": "wrap_text",
+    "schema": [
+        {
+            "name": "Content",
+            "fields": [
+                {
+                    "label": "Title",
+                    "field": "title",
+                    "type": "string",
+                    "translatable": true
+                },
+                {
+                    "label": "Data source filters",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "product",
+                    "default": null
+                }
+            ]
+        }
+    ]
+}

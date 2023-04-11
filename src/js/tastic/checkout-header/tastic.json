@@ -1,0 +1,19 @@
+{
+    "tasticType": "frontastic/boost/checkout-header",
+    "name": "Checkout header",
+    "icon": "menu",
+    "category": "Checkout",
+    "schema": [
+        {
+            "name": "Logo",
+            "fields": [
+                {
+                    "label": "Logo",
+                    "field": "logo",
+                    "type": "media",
+                    "required": false
+                }
+            ]
+        }
+    ]
+}

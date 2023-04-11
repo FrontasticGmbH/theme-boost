@@ -1,0 +1,20 @@
+{
+    "tasticType": "frontastic/boost/product-details/price",
+    "name": "Product price",
+    "category": "Product details",
+    "icon": "local_offer",
+    "schema": [
+        {
+            "name": "Product configuration",
+            "fields": [
+                {
+                    "label": "Data source filters",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "product",
+                    "default": null
+                }
+            ]
+        }
+    ]
+}

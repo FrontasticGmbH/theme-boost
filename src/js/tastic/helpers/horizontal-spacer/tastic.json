@@ -1,0 +1,52 @@
+{
+    "tasticType": "frontastic/boost/helpers/horizontal-spacer",
+    "name": "Horizontal spacer",
+    "category": "Helpers",
+    "icon": "photo_size_select_small",
+    "schema": [
+        {
+            "name": "Space size",
+            "fields": [
+                {
+                    "label": "Size",
+                    "field": "size",
+                    "type": "enum",
+                    "required": false,
+                    "values": [
+                        {
+                            "value": "xxs",
+                            "name": "Extra extra small (4px)"
+                        },
+                        {
+                            "value": "xs",
+                            "name": "Extra small (8px)"
+                        },
+                        {
+                            "value": "sm",
+                            "name": "Small (12px)"
+                        },
+                        {
+                            "value": "md",
+                            "name": "Medium (16px)"
+                        },
+                        {
+                            "value": "lg",
+                            "name": "Large (20px)"
+                        },
+                        {
+                            "value": "xl",
+                            "name": "Extra large (24px)"
+                        }
+                    ],
+                    "default": "xl"
+                },
+                {
+                    "label": "Space in px (overrides size field)",
+                    "field": "spaceInPx",
+                    "type": "integer",
+                    "default": 0
+                }
+            ]
+        }
+    ]
+}

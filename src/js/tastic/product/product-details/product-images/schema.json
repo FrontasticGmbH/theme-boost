@@ -1,0 +1,20 @@
+{
+    "tasticType": "frontastic/boost/product-details/product-images",
+    "name": "Product images",
+    "category": "Product details",
+    "icon": "photo",
+    "schema": [
+        {
+            "name": "Configuration",
+            "fields": [
+                {
+                    "label": "Data source filters",
+                    "field": "stream",
+                    "type": "stream",
+                    "streamType": "product",
+                    "default": null
+                }
+            ]
+        }
+    ]
+}
