@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { useForm } from 'react-hook-form'
 
 import ErrorMessage from '../../../atoms/errorMessage'
@@ -191,7 +191,7 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
 }
 
 AddressForm.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     countries: PropTypes.array.isRequired,
     defaultValues: PropTypes.object,
     onSubmit: PropTypes.func.isRequired,

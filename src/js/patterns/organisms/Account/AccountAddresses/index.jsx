@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import app from '@frontastic/catwalk/src/js/app/app'
 import Button from '../../../atoms/button'
@@ -180,7 +180,7 @@ const AccountAddresses = ({
 }
 
 AccountAddresses.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     openPanel: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     addresses: PropTypes.array.isRequired,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 import DiscountForm from './Forms/Discount'
 import ShippingMethodForm from './Forms/ShippingMethod'
@@ -116,7 +116,7 @@ const OverviewPanel = ({ app, intl, data, countries, goToNextPanel, goToPanelInd
 
 OverviewPanel.propTypes = {
     app: PropTypes.object.isRequired,
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired,
     countries: PropTypes.array.isRequired,
     goToNextPanel: PropTypes.func.isRequired,

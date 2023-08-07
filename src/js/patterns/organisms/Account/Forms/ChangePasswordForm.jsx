@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { useForm } from 'react-hook-form'
 
 import ButtonWithLoader from '../../../atoms/button/WithLoader'
@@ -108,7 +108,7 @@ const ChangePasswordForm = ({ intl, onSubmit, showLoader }) => {
 }
 
 ChangePasswordForm.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     onSubmit: PropTypes.func.isRequired,
     showLoader: PropTypes.bool.isRequired,
 }

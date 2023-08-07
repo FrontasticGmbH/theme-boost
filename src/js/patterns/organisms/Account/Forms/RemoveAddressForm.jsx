@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import ButtonWithLoader from '../../../atoms/button/WithLoader'
 
@@ -36,7 +36,7 @@ const RemoveAddressForm = ({ intl, address, countries, onRemoveAddressClicked, s
 }
 
 RemoveAddressForm.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     address: PropTypes.object,
     countries: PropTypes.array.isRequired,
     onRemoveAddressClicked: PropTypes.func.isRequired,

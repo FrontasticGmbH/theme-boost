@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import { convertToCountryName, convertToStateName } from './../countries'
 import { ReactComponent as EditIcon } from '../../../../../icons/tailwind-icons/icon-edit.svg'
@@ -40,7 +40,7 @@ const Shipping = ({ intl, address, onClick }) => {
 }
 
 Shipping.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     address: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired,
 }

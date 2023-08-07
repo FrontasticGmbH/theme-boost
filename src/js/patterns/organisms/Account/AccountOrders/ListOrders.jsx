@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import Price from '../../../atoms/price'
 
 import { ReactComponent as FileIcon } from '../../../../icons/tailwind-icons/icon-file.svg'
@@ -71,7 +71,7 @@ const ListOrders = ({ intl, orders, selectOrder }) => {
 }
 
 ListOrders.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     orders: PropTypes.array.isRequired,
     selectOrder: PropTypes.func.isRequired,
 }

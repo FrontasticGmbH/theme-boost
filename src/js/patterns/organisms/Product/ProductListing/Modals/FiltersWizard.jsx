@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Popup from 'reactjs-popup'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import FacetModal from './FacetModal'
 import FacetService from './../FacetService'
@@ -100,7 +100,7 @@ const FiltersWizard = ({ intl, data, onFacetsChanged }) => {
 }
 
 FiltersWizard.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired,
     onFacetsChanged: PropTypes.func,
 }

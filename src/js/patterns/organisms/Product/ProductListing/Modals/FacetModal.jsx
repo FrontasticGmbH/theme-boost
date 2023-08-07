@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Popup from 'reactjs-popup'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import RangeFacet from './../Facets/RangeFacet'
 import TermFacet from './../Facets/TermFacet'
@@ -146,7 +146,7 @@ const FacetModal = ({ intl, facet, onChange }) => {
 }
 
 FacetModal.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     facet: PropTypes.object.isRequired,
     onChange: PropTypes.func,
 }

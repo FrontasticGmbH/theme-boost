@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import app from 'frontastic-catwalk/src/js/app/app'
 
 import Price from '../../../atoms/price'
@@ -80,7 +80,7 @@ const Product = ({ intl, itemId, image, name, designer, count, price, discounted
 }
 
 Product.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     itemId: PropTypes.string.isRequired,
     image: PropTypes.string,
     name: PropTypes.string.isRequired,

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import { intlShape } from 'react-intl'
 
 const convertToCountryName = (intl, code) => {
     return intl.formatMessage({ id: `country.${code}` })
@@ -29,12 +28,12 @@ const getCountryStates = (country) => {
 }
 
 convertToCountryName.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     code: PropTypes.string.isRequired,
 }
 
 convertToStateName.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     country: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
 }

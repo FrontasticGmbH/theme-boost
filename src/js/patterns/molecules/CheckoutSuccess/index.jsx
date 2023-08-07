@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import EmptyState, { icons } from '../../organisms/EmptyState'
 
@@ -34,7 +34,7 @@ const CheckoutSuccess = ({ intl, id, email, onClick }) => {
 }
 
 CheckoutSuccess.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 import { useSelector } from 'react-redux'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import app from '@frontastic/catwalk/src/js/app/app'
 import tastify from '@frontastic/catwalk/src/js/helper/tastify'

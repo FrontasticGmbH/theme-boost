@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import Button from '../../../atoms/button'
 import { ReactComponent as EditIcon } from '../../../../icons/tailwind-icons/icon-edit.svg'
@@ -62,7 +62,7 @@ const AccountDetailsOverview = ({
 }
 
 AccountDetailsOverview.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,

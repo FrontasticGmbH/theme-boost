@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import PropTypes from 'prop-types'
 
 import FullPageWidthWrapper from '../Layout/FullPageWidthWrapper'
@@ -31,7 +31,7 @@ const CheckoutFooter = ({ intl, links, title }) => {
 }
 
 CheckoutFooter.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     title: PropTypes.string,
     links: PropTypes.array,
 }

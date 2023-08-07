@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import { useForm } from 'react-hook-form'
 
 import Button from '../../../atoms/button'
@@ -137,7 +137,7 @@ const Register = ({ intl, showLoginForm, handleRegister, showLoader }) => {
 }
 
 Register.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     showLoginForm: PropTypes.func.isRequired,
     handleRegister: PropTypes.func.isRequired,
     showLoader: PropTypes.bool.isRequired,

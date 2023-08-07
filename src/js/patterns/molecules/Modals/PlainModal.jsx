@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { ReactComponent as CloseIcon } from '../../../../icons/tailwind-icons/icon-close-black.svg'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 const PlainModal = ({ onClose, children, intl, title = '', variant = '' }) => {
     const node = useRef()
@@ -48,7 +48,7 @@ const PlainModal = ({ onClose, children, intl, title = '', variant = '' }) => {
 PlainModal.propTypes = {
     onClose: PropTypes.func.isRequired,
     children: PropTypes.any.isRequired,
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     title: PropTypes.any,
     variant: PropTypes.string,
 }

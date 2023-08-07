@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 import classnames from 'classnames'
 
 import FullPageWidthWrapper from '../../molecules/Layout/FullPageWidthWrapper'
@@ -111,7 +111,7 @@ const ProductData = ({
 }
 
 ProductData.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     name: PropTypes.string.isRequired,
     variants: PropTypes.array.isRequired,
     selectedVariant: PropTypes.object.isRequired,

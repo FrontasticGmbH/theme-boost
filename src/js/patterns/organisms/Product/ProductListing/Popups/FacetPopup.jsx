@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Popup from 'reactjs-popup'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import RangeFacet from './../Facets/RangeFacet'
 import TermFacet from './../Facets/TermFacet'
@@ -141,7 +141,7 @@ const FacetPopup = ({ intl, initialFacet, onChange }) => {
 }
 
 FacetPopup.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     initialFacet: PropTypes.object.isRequired,
     onChange: PropTypes.func,
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useForm } from 'react-hook-form'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl, IntlShape } from 'react-intl'
 
 import Button from '../../../atoms/button'
 import ButtonWithLoader from '../../../atoms/button/WithLoader'
@@ -99,7 +99,7 @@ const Login = ({ intl, showRegisterForm, showForgottenPasswordForm, handleLogin,
 }
 
 Login.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     showRegisterForm: PropTypes.func.isRequired,
     showForgottenPasswordForm: PropTypes.func.isRequired,
     handleLogin: PropTypes.func.isRequired,

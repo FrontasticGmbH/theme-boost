@@ -9,7 +9,7 @@ import DefaultLoader from '../../patterns/molecules/Loaders/DefaultLoader/index'
 import CheckoutPanels from '../../patterns/molecules/Layout/CheckoutPanels'
 
 import EmptyState, { icons } from '../../patterns/organisms/EmptyState'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 import { Helmet } from 'react-helmet'
 
@@ -161,7 +161,7 @@ const CheckoutTastic = ({ intl, cart, context, data }) => {
 }
 
 CheckoutTastic.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     cart: PropTypes.instanceOf(Entity),
     context: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired,

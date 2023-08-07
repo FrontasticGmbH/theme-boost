@@ -1,9 +1,12 @@
 import React from 'react'
 import { configure, addDecorator, addParameters } from '@storybook/react'
 import { setIntlConfig, withIntl } from 'storybook-addon-intl'
-import { addLocaleData } from 'react-intl'
-import enLocaleData from 'react-intl/locale-data/en'
-import deLocaleData from 'react-intl/locale-data/de'
+import '@formatjs/intl-pluralrules/polyfill'
+import '@formatjs/intl-pluralrules/locale-data/en'
+import '@formatjs/intl-pluralrules/locale-data/de'
+import '@formatjs/intl-relativetimeformat/polyfill'
+import '@formatjs/intl-relativetimeformat/locale-data/en'
+import '@formatjs/intl-relativetimeformat/locale-data/de'
 import StoryRouter from 'storybook-react-router'
 import { create } from '@storybook/theming'
 import { withFrontasticRedux } from '@frontastic/catwalk/src/js/helper/storybook/redux'
@@ -89,10 +92,6 @@ addDecorator((Story) => (
         <Story />
     </Container>
 ))
-
-// SETTING UP TRANSLATIONS
-addLocaleData(enLocaleData)
-addLocaleData(deLocaleData)
 
 const messages = { en: flatten(en), de: flatten(de) }
 

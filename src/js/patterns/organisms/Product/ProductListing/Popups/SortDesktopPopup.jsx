@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
 import Popup from 'reactjs-popup'
-import { FormattedMessage, injectIntl, intlShape } from 'react-intl'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
 import sortValues from './SortValues'
 import FacetService from './../FacetService'
@@ -99,7 +99,7 @@ const SortDesktopPopup = ({ intl, sortState, onChange }) => {
 }
 
 SortDesktopPopup.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     sortState: PropTypes.object.isRequired,
     onChange: PropTypes.func,
 }

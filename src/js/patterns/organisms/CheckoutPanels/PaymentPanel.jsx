@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 import PaymentMethod from './Forms/PaymentMethod'
 
@@ -251,7 +251,7 @@ const PaymentPanel = ({ app, cart, intl, data, goToPanelIndex, isLoading = false
 PaymentPanel.propTypes = {
     app: PropTypes.object.isRequired,
     cart: PropTypes.instanceOf(Entity),
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     data: PropTypes.object.isRequired,
     goToPanelIndex: PropTypes.func.isRequired,
     isLoading: PropTypes.bool,

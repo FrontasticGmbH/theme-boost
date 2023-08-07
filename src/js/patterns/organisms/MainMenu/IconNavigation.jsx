@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 
 import IconButton from '../../atoms/button/IconButton'
 import Badge from '../../atoms/badge'
@@ -69,7 +69,7 @@ const IconNavigation = ({
 }
 
 IconNavigation.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     variant: PropTypes.string,
     cartItemsCount: PropTypes.number,
     wishListLineItemsCount: PropTypes.number,

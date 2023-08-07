@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
-import { injectIntl, intlShape } from 'react-intl'
+import { injectIntl } from 'react-intl'
 import TinySlider from 'tiny-slider-react'
 
 import ControlButton from './ControlButton'
@@ -62,7 +62,7 @@ const Slider = ({ intl, children, options = {} }) => {
 }
 
 Slider.propTypes = {
-    intl: intlShape.isRequired,
+    intl: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired,
     options: PropTypes.object,
 }
