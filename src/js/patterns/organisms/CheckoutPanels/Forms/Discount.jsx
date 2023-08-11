@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FormattedMessage, injectIntl } from 'react-intl'
 
 import app from 'frontastic-catwalk/src/js/app/app'
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 const Discount = ({ intl }) => {
     const buttonLabel = intl.formatMessage({ id: 'checkout.discount.apply' })
