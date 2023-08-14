@@ -1,4 +1,10 @@
 
+## Version 1.4.1 (2023-08-14)
+
+** New Features and Improvements **
+
+- Add compatibility with react-intl version 6
+
 ## Version 1.4.0 (2023-03-02)
 
 ** New Features and Improvements **

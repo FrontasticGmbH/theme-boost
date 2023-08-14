@@ -1,6 +1,6 @@
 {
     "name": "@frontastic/theme-boost",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "dependencies": {
         "@frontastic/catwalk": "^1.57.0",
         "flat": "^5.0.0",
