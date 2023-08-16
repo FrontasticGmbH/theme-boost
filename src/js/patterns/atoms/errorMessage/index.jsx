@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ErrorMessage as Message } from 'react-hook-form'
+import { ErrorMessage as Message } from '@hookform/error-message'
 
 import './style.scss'
 
