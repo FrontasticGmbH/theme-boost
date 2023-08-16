@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 import { FormattedMessage, injectIntl } from 'react-intl'
 
 import RangeFacet from './../Facets/RangeFacet'

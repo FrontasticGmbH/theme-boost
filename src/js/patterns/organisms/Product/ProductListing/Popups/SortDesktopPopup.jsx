@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
 import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 import { FormattedMessage, injectIntl } from 'react-intl'
 
 import sortValues from './SortValues'
