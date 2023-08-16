@@ -10,7 +10,7 @@ const ChangePasswordForm = ({ intl, onSubmit, showLoader }) => {
     const requiredField = intl.formatMessage({ id: 'validation.required' })
     const minLength = intl.formatMessage({ id: 'validation.minLength' })
     const passwordMatch = intl.formatMessage({ id: 'validation.passwordMatch' })
-    const { register, errors, getValues, watch, handleSubmit } = useForm({ mode: 'onChange' })
+    const { register, getValues, watch, handleSubmit, formState: { errors } } = useForm({ mode: 'onChange' })
 
     const onNewPasswordSubmit = () => {
         const { oldPassword, newPassword } = getValues()
@@ -44,11 +44,9 @@ const ChangePasswordForm = ({ intl, onSubmit, showLoader }) => {
                     </label>
                     <input
                         id='old-password'
-                        name='oldPassword'
+                        {...register('oldPassword', { required: requiredField })}
                         type='password'
-                        className='form-input mt-2'
-                        ref={register({ required: requiredField })}
-                    />
+                        className='form-input mt-2' />
                     <ErrorMessage errors={errors} name='oldPassword' />
                 </div>
                 <div className='mb-4'>
@@ -58,17 +56,15 @@ const ChangePasswordForm = ({ intl, onSubmit, showLoader }) => {
 
                     <input
                         id='newPassword'
-                        name='newPassword'
-                        type='password'
-                        className='form-input mt-2'
-                        ref={register({
+                        {...register('newPassword', {
                             required: requiredField,
                             minLength: {
                                 value: 6,
                                 message: minLength,
                             },
                         })}
-                    />
+                        type='password'
+                        className='form-input mt-2' />
 
                     <ErrorMessage errors={errors} name='newPassword' />
                 </div>
@@ -79,16 +75,14 @@ const ChangePasswordForm = ({ intl, onSubmit, showLoader }) => {
 
                     <input
                         id='confirmNewPassword'
-                        name='confirmNewPassword'
-                        type='password'
-                        className='form-input mt-2'
-                        ref={register({
+                        {...register('confirmNewPassword', {
                             required: requiredField,
                             validate: (value) => {
                                 return value === watch('newPassword') || passwordMatch
                             },
                         })}
-                    />
+                        type='password'
+                        className='form-input mt-2' />
 
                     <ErrorMessage errors={errors} name='confirmNewPassword' />
                 </div>

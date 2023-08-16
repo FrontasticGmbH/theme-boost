@@ -6,7 +6,7 @@
         "@hookform/error-message": "^2.0.1",
         "flat": "^5.0.0",
         "mime": "^1.4.1",
-        "react-hook-form": "^6.15.8",
+        "react-hook-form": "7.45.4",
         "react-intersection-observer": "^8.28.5",
         "react-modal": "^3.11.2",
         "react-sliding-pane": "^4.1.0",

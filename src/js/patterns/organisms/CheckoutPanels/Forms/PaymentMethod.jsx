@@ -40,11 +40,9 @@ const PaymentMethod = ({ paymentMethods, onSubmit }) => {
                         <input
                             type='radio'
                             aria-label='Payment method'
-                            name='type'
+                            {...register('type')}
                             value={paymentMethod.type}
-                            className='mr-2'
-                            ref={register()}
-                        />
+                            className='mr-2' />
                         {paymentMethod.name}
                     </div>
                 )

@@ -8,7 +8,7 @@ import ButtonWithLoader from '../../../atoms/button/WithLoader'
 import ErrorMessage from '../../../atoms/errorMessage'
 
 const Login = ({ intl, showRegisterForm, showForgottenPasswordForm, handleLogin, showLoader }) => {
-    const { register, handleSubmit, errors } = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
     const validEmail = intl.formatMessage({ id: 'validation.email' })
     const requiredField = intl.formatMessage({ id: 'validation.required' })
 
@@ -31,10 +31,7 @@ const Login = ({ intl, showRegisterForm, showForgottenPasswordForm, handleLogin,
                             </label>
                             <input
                                 id='login-email'
-                                name='email'
-                                type='text'
-                                className='form-input mt-2'
-                                ref={register({
+                                {...register('email', {
                                     required: requiredField,
                                     pattern: {
                                         // TODO - please double check if this regex is ok
@@ -42,7 +39,8 @@ const Login = ({ intl, showRegisterForm, showForgottenPasswordForm, handleLogin,
                                         message: validEmail,
                                     },
                                 })}
-                            />
+                                type='text'
+                                className='form-input mt-2' />
                             <ErrorMessage errors={errors} name='email' />
                         </div>
 
@@ -52,11 +50,9 @@ const Login = ({ intl, showRegisterForm, showForgottenPasswordForm, handleLogin,
                             </label>
                             <input
                                 id='login-password'
-                                name='password'
+                                {...register('password', { required: requiredField })}
                                 type='password'
-                                className='form-input mt-2'
-                                ref={register({ required: requiredField })}
-                            />
+                                className='form-input mt-2' />
                             <ErrorMessage errors={errors} name='password' />
                         </div>
 

@@ -50,12 +50,10 @@ const ShippingMethod = ({ shippingMethod, onSubmit }) => {
                         <input
                             type='radio'
                             aria-label='Shipping method'
-                            name='shippingMethodId'
+                            {...register('shippingMethodId')}
                             value={method.shippingMethodId}
                             id={method.name}
-                            className='mr-2'
-                            ref={register()}
-                        />
+                            className='mr-2' />
                         <div className='flex flex-col w-full'>
                             <div className='text-md leading-tight capitalize'>{method.name}</div>
                             {method.description && (

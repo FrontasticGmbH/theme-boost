@@ -10,7 +10,7 @@ import ButtonWithLoader from '../../../atoms/button/WithLoader'
 const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader }) => {
     const requiredField = intl.formatMessage({ id: 'validation.required' })
 
-    const { register, errors, getValues, handleSubmit } = useForm({
+    const { register, getValues, handleSubmit, formState: { errors } } = useForm({
         mode: 'onChange',
         defaultValues: defaultValues || {},
     })
@@ -21,7 +21,7 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
 
     return (
         <form className='w-11/12 m-auto mt-2' onSubmit={handleSubmit(onFormSubmit)}>
-            <input type='hidden' name='addressId' ref={register()} />
+            <input type='hidden' {...register('addressId')} />
 
             <div className='mb-4'>
                 <label className='text-sm text-neutral-700 leading-tight' htmlFor='address-firstName'>
@@ -29,14 +29,12 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <input
                     id='address-firstName'
-                    name='firstName'
+                    {...register('firstName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.firstName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='firstName' />
             </div>
 
@@ -46,14 +44,12 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <input
                     id='address-lastName'
-                    name='lastName'
+                    {...register('lastName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.lastName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='lastName' />
             </div>
 
@@ -63,13 +59,11 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <select
                     id='address-country'
-                    name='country'
+                    {...register('country', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2 bg-background-primary': true,
                         'border border-red-600': errors.country,
-                    })}
-                    ref={register({ required: requiredField })}
-                >
+                    })}>
                     {countries.map((country) => {
                         return (
                             <option key={country.code} value={country.code}>
@@ -88,24 +82,20 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <input
                     id='address-streetName'
-                    name='streetName'
+                    {...register('streetName', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.streetName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='streetName' />
 
                 <input
                     id='address-streetNumber'
-                    name='streetNumber'
+                    {...register('streetNumber', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.streetNumber,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='streetNumber' />
             </div>
 
@@ -115,13 +105,11 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <input
                     id='address-city'
-                    name='city'
+                    {...register('city', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.city,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='city' />
             </div>
 
@@ -131,13 +119,11 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 </label>
                 <input
                     id='address-postalCode'
-                    name='postalCode'
+                    {...register('postalCode', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.postalCode,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='postalCode' />
             </div>
 
@@ -145,7 +131,11 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                 <label className='text-sm text-neutral-700 leading-tight' htmlFor='address-phone'>
                     <FormattedMessage id={'checkout.form.phone'} />
                 </label>
-                <input id='address-phone' name='phone' className='form-input mt-2' type='text' ref={register()} />
+                <input
+                    id='address-phone'
+                    {...register('phone')}
+                    className='form-input mt-2'
+                    type='text' />
             </div>
 
             <div className='mb-2 bg-neutral-200 px-4 py-4 flex items-center rounded'>
@@ -153,9 +143,7 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                     id='shipping-default'
                     type='checkbox'
                     className='mr-2'
-                    name='isDefaultShippingAddress'
-                    ref={register()}
-                />
+                    {...register('isDefaultShippingAddress')} />
 
                 <label className='text-sm text-neutral-900 leading-tight' htmlFor='shipping-default'>
                     <FormattedMessage id='account.address.standardShipping' />
@@ -167,9 +155,7 @@ const AddressForm = ({ intl, countries, defaultValues = {}, onSubmit, showLoader
                     id='billing-default'
                     type='checkbox'
                     className='mr-2'
-                    name='isDefaultBillingAddress'
-                    ref={register()}
-                />
+                    {...register('isDefaultBillingAddress')} />
 
                 <label className='text-sm text-neutral-900 leading-tight' htmlFor='billing-default'>
                     <FormattedMessage id='account.address.standardBilling' />

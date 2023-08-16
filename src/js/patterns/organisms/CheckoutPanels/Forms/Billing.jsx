@@ -10,7 +10,7 @@ import ErrorMessage from '../../../atoms/errorMessage'
 const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
     const requiredField = intl.formatMessage({ id: 'validation.required' })
 
-    const { register, errors, getValues } = useForm({ mode: 'onChange', defaultValues: defaultValues || {} })
+    const { register, getValues, formState: { errors } } = useForm({ mode: 'onChange', defaultValues: defaultValues || {} })
 
     const onChange = () => {
         onSubmit(getValues())
@@ -32,14 +32,12 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <input
                     id='billing-firstName'
-                    name='firstName'
+                    {...register('firstName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.firstName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='firstName' />
             </div>
 
@@ -49,14 +47,12 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <input
                     id='billing-lastName'
-                    name='lastName'
+                    {...register('lastName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.surname,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='lastName' />
             </div>
 
@@ -64,7 +60,11 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 <label className='text-sm text-neutral-700 leading-tight' htmlFor='billing-phone'>
                     <FormattedMessage id={'checkout.form.phone'} />
                 </label>
-                <input id='billing-phone' name='phone' type='text' className='form-input mt-2' ref={register()} />
+                <input
+                    id='billing-phone'
+                    {...register('phone')}
+                    type='text'
+                    className='form-input mt-2' />
             </div>
 
             <div className='mb-4'>
@@ -73,14 +73,12 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <input
                     id='billing-streetName'
-                    name='streetName'
+                    {...register('streetName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.streetName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='streetName' />
             </div>
 
@@ -90,14 +88,12 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <input
                     id='billing-city'
-                    name='city'
+                    {...register('city', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.city,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='city' />
             </div>
 
@@ -107,14 +103,12 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <input
                     id='billing-postalCode'
-                    name='postalCode'
+                    {...register('postalCode', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.postalCode,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='postalCode' />
             </div>
 
@@ -124,13 +118,11 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                 </label>
                 <select
                     id='billing-country'
-                    name='country'
+                    {...register('country', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2 bg-background-primary': true,
                         'border border-red-600': errors.country,
-                    })}
-                    ref={register({ required: requiredField })}
-                >
+                    })}>
                     <option value='' />
                     {countries.map((country, key) => {
                         return (
@@ -148,13 +140,13 @@ const Billing = ({ intl, countries, defaultValues = {}, onSubmit }) => {
                     <label className='text-sm text-neutral-700 leading-tight' htmlFor='billing-state'>
                         <FormattedMessage id={'checkout.form.stateOrProvince'} /> *
                     </label>
-                    <select id='billing-state' name='state'
+                    <select
+                        id='billing-state'
+                        {...register('state', { required: requiredField })}
                         className={classnames({
                             'form-input mt-2 bg-background-primary': true,
                             'border border-red-600': errors.state,
-                        })}
-                        ref={register({ required: requiredField })}
-                        >
+                        })}>
                         <option value='' />
                         {getStates().map((state, key) => {
                             return (<option key={key} value={state}>{convertToStateName(intl, getValues('country'), state)}</option>)

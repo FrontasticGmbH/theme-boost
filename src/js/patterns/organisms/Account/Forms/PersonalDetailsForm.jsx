@@ -9,7 +9,7 @@ import ErrorMessage from '../../../atoms/errorMessage'
 const PersonalDetailsForm = ({ intl, firstName, lastName, onSubmit, showLoader }) => {
     const requiredField = intl.formatMessage({ id: 'validation.required' })
 
-    const { register, errors, getValues, handleSubmit } = useForm({
+    const { register, getValues, handleSubmit, formState: { errors } } = useForm({
         mode: 'onChange',
         defaultValues: { firstName, lastName },
     })
@@ -30,11 +30,9 @@ const PersonalDetailsForm = ({ intl, firstName, lastName, onSubmit, showLoader }
                 </label>
                 <input
                     id='firstName'
-                    name='firstName'
+                    {...register('firstName', { required: requiredField })}
                     type='text'
-                    className='form-input mt-2'
-                    ref={register({ required: requiredField })}
-                />
+                    className='form-input mt-2' />
                 <ErrorMessage errors={errors} name='firstName' />
             </div>
             <div className='mb-4'>
@@ -43,11 +41,9 @@ const PersonalDetailsForm = ({ intl, firstName, lastName, onSubmit, showLoader }
                 </label>
                 <input
                     id='lastName'
-                    name='lastName'
+                    {...register('lastName', { required: requiredField })}
                     type='text'
-                    className='form-input mt-2'
-                    ref={register({ required: requiredField })}
-                />
+                    className='form-input mt-2' />
                 <ErrorMessage errors={errors} name='lastName' />
             </div>
             <div className='text-center mt-6'>

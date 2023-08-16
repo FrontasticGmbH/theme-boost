@@ -18,7 +18,7 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
         }
     }
 
-    const { register, errors, getValues } = useForm({ mode: 'onChange', defaultValues: defaultValues || {} })
+    const { register, getValues, formState: { errors } } = useForm({ mode: 'onChange', defaultValues: defaultValues || {} })
 
     const onChange = () => {
         onSubmit(getValues())
@@ -40,14 +40,12 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-firstName'
-                    name='firstName'
+                    {...register('firstName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.firstName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='firstName' />
             </div>
 
@@ -57,14 +55,12 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-lastName'
-                    name='lastName'
+                    {...register('lastName', { required: requiredField })}
                     type='text'
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.lastName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='lastName' />
             </div>
 
@@ -72,7 +68,11 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 <label className='text-sm text-neutral-700 leading-tight' htmlFor='shipping-phone'>
                     <FormattedMessage id={'checkout.form.phone'} />
                 </label>
-                <input id='shipping-phone' name='phone' className='form-input mt-2' type='text' ref={register()} />
+                <input
+                    id='shipping-phone'
+                    {...register('phone')}
+                    className='form-input mt-2'
+                    type='text' />
             </div>
 
             <div>
@@ -81,12 +81,7 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-email'
-                    name='email'
-                    className={classnames({
-                        'form-input mt-2': true,
-                        'border border-red-600': errors.email,
-                    })}
-                    ref={register({
+                    {...register('email', {
                         required: requiredField,
                         pattern: {
                             // TODO - please double check if this regex is ok
@@ -94,7 +89,10 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                             message: validEmail,
                         },
                     })}
-                />
+                    className={classnames({
+                        'form-input mt-2': true,
+                        'border border-red-600': errors.email,
+                    })} />
                 <ErrorMessage errors={errors} name='email' />
             </div>
 
@@ -110,13 +108,11 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-streetName'
-                    name='streetName'
+                    {...register('streetName', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.streetName,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='streetName' />
             </div>
 
@@ -126,13 +122,11 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-city'
-                    name='city'
+                    {...register('city', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.city,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='city' />
             </div>
 
@@ -142,13 +136,11 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <input
                     id='shipping-postalCode'
-                    name='postalCode'
+                    {...register('postalCode', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2': true,
                         'border border-red-600': errors.postalCode,
-                    })}
-                    ref={register({ required: requiredField })}
-                />
+                    })} />
                 <ErrorMessage errors={errors} name='postalCode' />
             </div>
 
@@ -158,13 +150,11 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                 </label>
                 <select
                     id='shipping-country'
-                    name='country'
+                    {...register('country', { required: requiredField })}
                     className={classnames({
                         'form-input mt-2 bg-background-primary': true,
                         'border border-red-600': errors.country,
-                    })}
-                    ref={register({ required: requiredField })}
-                >
+                    })}>
                     <option value='' />
                     {countries.map((country, key) => {
                         return (
@@ -183,13 +173,13 @@ const Shipping = ({ intl, countries, defaultEmail = '', defaultValues = {}, onSu
                     <label className='text-sm text-neutral-700 leading-tight' htmlFor='shipping-state'>
                         <FormattedMessage id={'checkout.form.stateOrProvince'} /> *
                     </label>
-                    <select id='shipping-state' name='state'
+                    <select
+                        id='shipping-state'
+                        {...register('state', { required: requiredField })}
                         className={classnames({
                             'form-input mt-2 bg-background-primary': true,
                             'border border-red-600': errors.state,
-                        })}
-                        ref={register({ required: requiredField })}
-                        >
+                        })}>
                         <option value='' />
                         {getStates().map((state, key) => {
                             return (<option key={key} value={state}>{convertToStateName(intl, getValues('country'), state)}</option>)
