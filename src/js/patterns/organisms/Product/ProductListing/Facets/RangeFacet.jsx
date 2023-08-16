@@ -50,9 +50,7 @@ const RangeFacet = ({ facet, onChange }) => {
                     name='min'
                     type='number'
                     value={tmpMin}
-                    onChange={(e) => {
-                        setTmpMin(e.target.value)
-                    }}
+                    readOnly
                     onBlur={() => {
                         if (Number.isNaN(tmpMin) || tmpMin < min) {
                             onRangeChange([parseFloat(min), value[1]])
@@ -69,9 +67,7 @@ const RangeFacet = ({ facet, onChange }) => {
                     name='max'
                     type='number'
                     value={tmpMax}
-                    onChange={(e) => {
-                        setTmpMax(e.target.value)
-                    }}
+                    readOnly
                     onBlur={() => {
                         if (Number.isNaN(tmpMax) || tmpMax > max) {
                             onRangeChange([value[0], parseFloat(max)])
