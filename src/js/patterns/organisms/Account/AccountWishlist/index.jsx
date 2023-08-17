@@ -29,18 +29,16 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
         }
     }, [wishlist])
 
-    const wishlistContainerTransition = useTransition(wishlistChanging, null, {
+    const wishlistContainerTransition = useTransition(wishlistChanging,  {
         initial: {
             height: wishlistHeight > 0 ? wishlistHeight : 'auto',
         },
         update: { height: wishlistHeight > 0 ? wishlistHeight : 'auto' },
     })
+    console.log(wishlistContainerTransition)
 
     const wishlistItemsTransitions = useTransition(
         wishlistItems,
-        (item) => {
-            return item.lineItemId
-        },
         {
             initial: {
                 opacity: 1,
@@ -54,6 +52,9 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
             leave: {
                 height: 0,
                 opacity: 0,
+            },
+            keys: (item) => {
+                return item.lineItemId
             },
         }
     )
@@ -74,11 +75,11 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
 
             {wishlist.isComplete() &&
                 wishlistItems.length > 0 &&
-                wishlistContainerTransition.map(({ item, key, props: containerProps }) => {
+                wishlistContainerTransition(( style, item) => {
                     return (
                         <>
                             {item && (
-                                <animated.div style={containerProps}>
+                                <animated.div style={style}>
                                     <div ref={wishlistContainerRef}>
                                         <div className='text-center my-3'>
                                             <div className='font-bold text-2xl'>
@@ -96,9 +97,9 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
                                             </div>
                                         </div>
                                         <div className='grid gap-4 grid-cols-1 xsm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between'>
-                                            {wishlistItemsTransitions.map(({ item, key, props }) => {
+                                            {wishlistItemsTransitions((style, item) => {
                                                 return (
-                                                    <animated.div key={key} style={{ ...props, minHeight: '354px' }}>
+                                                    <animated.div style={{ ...style, minHeight: '354px' }}>
                                                         <div ref={itemRef}>
                                                             <ProductTeaser
                                                                 product={item}
