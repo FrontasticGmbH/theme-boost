@@ -29,7 +29,7 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
         }
     }, [wishlist])
 
-    const wishlistContainerTransition = useTransition(wishlistChanging,  {
+    const wishlistContainerTransition = useTransition(wishlistChanging, {
         initial: {
             height: wishlistHeight > 0 ? wishlistHeight : 'auto',
         },
@@ -75,7 +75,7 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
 
             {wishlist.isComplete() &&
                 wishlistItems.length > 0 &&
-                wishlistContainerTransition(( style, item) => {
+                wishlistContainerTransition((style, item) => {
                     return (
                         <>
                             {item && (
