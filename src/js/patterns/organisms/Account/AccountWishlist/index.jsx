@@ -35,7 +35,6 @@ const AccountWishlist = ({ wishlist, returnToHomePage }) => {
         },
         update: { height: wishlistHeight > 0 ? wishlistHeight : 'auto' },
     })
-    console.log(wishlistContainerTransition)
 
     const wishlistItemsTransitions = useTransition(
         wishlistItems,
