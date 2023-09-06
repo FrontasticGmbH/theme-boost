@@ -1,5 +1,7 @@
 // settings.typography
-//
+
+@use "sass:math";
+
 // Base font family.
 $base-font: 'Helvetica Neue' !default;
 $ff-base: #{$base-font}, -apple-system, BlinkMacSystemFont, “Roboto”, “Droid Sans”, “Helvetica Neue”, Helvetica, Arial,
@@ -7,9 +9,9 @@ $ff-base: #{$base-font}, -apple-system, BlinkMacSystemFont, “Roboto”, “Dro
 
 // settings.breakpoints
 $breakpoints: (
-    hand: 480em / 16,
-    lap: 740em / 16,
-    desk: 1270em / 18,
+    hand: math.div(480em, 16),
+    lap: math.div(740em, 16),
+    desk: math.div(1270em, 18),
 ) !default;
 
 // elements.page
