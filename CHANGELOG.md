@@ -1,4 +1,10 @@
 
+## Version 1.4.2 (2023-09-06)
+
+** Bug fixes **
+
+- Fix deprecation warnings in Sass code
+
 ## Version 1.4.1 (2023-08-14)
 
 ** New Features and Improvements **
