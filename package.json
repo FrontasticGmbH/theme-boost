@@ -1,6 +1,6 @@
 {
     "name": "@frontastic/theme-boost",
-    "version": "1.4.2",
+    "version": "1.5.0",
     "dependencies": {
         "@frontastic/catwalk": "^1.57.0",
         "@hookform/error-message": "^2.0.1",

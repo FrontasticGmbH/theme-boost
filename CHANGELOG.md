@@ -1,4 +1,10 @@
 
+## Version 1.5.0 (2023-10-11)
+
+** New Features and Improvements **
+
+- Add compatibility with React 18.
+
 ## Version 1.4.2 (2023-09-06)
 
 ** Bug fixes **
